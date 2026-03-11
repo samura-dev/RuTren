@@ -1,0 +1,89 @@
+/* Avatar */
+.avatar {
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--glass-layer);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--glass-border);
+}
+
+.avatarImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.avatarFallback {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+/* Badge */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 10px;
+    border-radius: 50px;
+    font-size: 10px;
+    font-weight: 500;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    line-height: normal;
+}
+
+.badgeDefault {
+    background-color: var(--glass-layer);
+    color: var(--text-primary);
+}
+
+.badgeAccent {
+    background-color: var(--color-accent);
+    color: #000000;
+}
+
+.badgeDanger {
+    background-color: var(--color-danger);
+    color: #ffffff;
+}
+
+.badgeOutline {
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+}
+
+/* Divider */
+.divider {
+    background-color: var(--glass-border);
+}
+
+.dividerHorizontal {
+    height: 1px;
+    width: 100%;
+}
+
+.dividerVertical {
+    width: 1px;
+    height: 100%;
+}
+
+/* Skeleton */
+.skeleton {
+    background-color: var(--glass-layer);
+    border-radius: 4px;
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}

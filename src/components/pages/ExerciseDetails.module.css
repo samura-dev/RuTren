@@ -1,0 +1,151 @@
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+.content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Media/Hero Section */
+.mediaContainer {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: rgba(255, 255, 255, 0.05);
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mediaPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.mediaIcon {
+    opacity: 0.2;
+}
+
+/* Main Details Container */
+.detailsContainer {
+    padding: 24px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+/* Header Section */
+.headerSection {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.chipsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Sections */
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sectionTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+/* Steps List */
+.stepsList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stepItem {
+    display: flex;
+    gap: 16px;
+}
+
+.stepNumber {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #ccff00;
+    color: black;
+    font-size: 13px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+    box-shadow: 0 2px 8px rgba(204, 255, 0, 0.2);
+}
+
+.stepText {
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.5;
+    font-size: 13px;
+    flex: 1;
+}
+
+/* Empty State */
+.emptyState {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    text-align: center;
+    gap: 16px;
+}

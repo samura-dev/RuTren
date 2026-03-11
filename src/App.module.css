@@ -1,0 +1,166 @@
+.container {
+    min-height: 100vh;
+    padding: 24px;
+    padding-bottom: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.header {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.headerSubtitle {
+    opacity: 0.6;
+    margin-top: 4px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.inputGroup {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 16px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.userCard {
+    /* Layout handled by contentClassName in App.tsx */
+    display: flex;
+}
+
+.cardContentRow {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.cardContentCol {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.userName {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.userBadge {
+    margin-left: auto;
+}
+
+.statsHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    /* Reduced to use gap from GlassCard */
+}
+
+.accentIcon {
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 8px rgba(157, 255, 0, 0.4));
+}
+
+.statsBadges {
+    display: flex;
+    gap: 12px;
+}
+
+/* Bottom Nav */
+.bottomNav {
+    position: fixed;
+    bottom: 24px;
+    left: 20px;
+    transform: none;
+    /* User requested specific left alignment */
+    width: calc(100% - 40px);
+    min-width: 280px;
+    max-width: 440px;
+    height: 64px;
+    z-index: 100;
+    border-radius: 32px;
+    background: rgba(20, 20, 20, 0.8) !important;
+    box-shadow:
+        0 10px 40px -10px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.08) inset,
+        0 0 0 1px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+.navContent {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.actionRow {
+    display: flex;
+    gap: 8px;
+}
+
+.statsRow {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.statsRow::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari */
+}
+
+.calendarRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.timerContainer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 12px;
+}

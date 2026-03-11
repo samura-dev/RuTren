@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.title {
+    margin: 0;
+}
+
+.action {
+    font-size: 13px;
+    height: 32px;
+    padding: 0 12px;
+    color: var(--color-accent);
+}

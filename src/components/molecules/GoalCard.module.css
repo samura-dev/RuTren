@@ -1,0 +1,90 @@
+.card {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.card:active {
+    transform: scale(0.98);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headerLeft {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.stats {
+    font-size: 11px;
+    opacity: 0.7;
+}
+
+.icon {
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.card:hover .icon {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.progressContainer {
+    width: 100%;
+    margin-top: 4px;
+}
+
+.progressTrack {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.progressBar {
+    height: 100%;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--color-accent) 0%, #b8e600 100%);
+    box-shadow: 0 0 12px rgba(157, 255, 0, 0.4);
+    position: relative;
+}
+
+/* Shimmer effect for progress bar */
+.progressBar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transform: translateX(-100%);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    100% {
+        transform: translateX(100%);
+    }
+}

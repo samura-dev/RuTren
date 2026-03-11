@@ -1,0 +1,57 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow: hidden;
+}
+
+.main {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 90px;
+    /* Space for BottomNav */
+}
+
+/* Scrollbar hiding */
+.main::-webkit-scrollbar {
+    display: none;
+}
+
+.main {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.bellButton {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    color: white;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+}
+
+.bellButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.notificationDot {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    width: 8px;
+    height: 8px;
+    background-color: #ccff00;
+    border-radius: 50%;
+    border: 2px solid #1e1e1e;
+    /* Using dark background color for border */
+}

@@ -1,0 +1,116 @@
+/* Switch */
+.switch {
+    width: 52px;
+    height: 32px;
+    border-radius: 999px;
+    padding: 2px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.switchChecked {
+    background-color: var(--color-accent);
+    box-shadow:
+        0 0 20px rgba(157, 255, 0, 0.4),
+        inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.switchUnchecked {
+    background-color: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.switchDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.switchThumb {
+    width: 28px;
+    height: 28px;
+    background: white;
+    border-radius: 50%;
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.3),
+        0 0 0 1px rgba(255, 255, 255, 0.5);
+    /* Rim light */
+    position: relative;
+    z-index: 2;
+}
+
+.checkboxContainer {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.hiddenInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Checkbox */
+.checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 8px;
+    border: 1.5px solid var(--text-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0;
+    flex-shrink: 0;
+    /* Prevent font metrics from affecting alignment */
+    line-height: 0;
+    font-size: 0;
+}
+
+.checkbox:hover {
+    border-color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.checkbox.checkboxChecked {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: #000000;
+    box-shadow:
+        0 0 15px rgba(157, 255, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.checkbox.checkboxUnchecked {
+    background-color: transparent;
+}
+
+.checkmarkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.checkIcon {
+    color: #000000;
+}
+
+.checkboxDisabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

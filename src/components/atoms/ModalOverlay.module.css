@@ -1,0 +1,14 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Darker overlay */
+    backdrop-filter: blur(8px);
+    /* Stronger blur */
+    -webkit-backdrop-filter: blur(8px);
+    padding: 16px;
+}

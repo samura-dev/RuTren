@@ -1,0 +1,150 @@
+.card {
+    overflow: hidden;
+}
+
+.header {
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.infoContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.indexBadge {
+    width: 28px;
+    height: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    /* Neutral default */
+    color: var(--text-primary);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 13px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+.completedBadge {
+    background: var(--color-accent);
+    color: #000;
+    font-weight: 700;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.title {
+    font-size: 14px;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.meta {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px 10px;
+    border-radius: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.metaText {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.iconBtn {
+    width: 32px !important;
+    height: 32px !important;
+    min-height: 32px !important;
+    padding: 0 !important;
+}
+
+.content {
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0 10px;
+    /* Added side padding as requested */
+}
+
+.setList {
+    padding: 0;
+    /* Remove padding as requested */
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* Ensure gap allows spacing between items */
+    margin-top: 12px;
+    /* Add some top spacing if needed so first item doesn't hit header directly? User said "remove padding but give elements spacing". */
+}
+
+.setRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.setNumber {
+    width: 60px;
+}
+
+.setInputs {
+    display: flex;
+    gap: 12px;
+}
+
+.inputPill {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 16px;
+    border-radius: 8px;
+    min-width: 70px;
+    text-align: center;
+}
+
+.setCheck {
+    width: 32px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer {
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.addSetBtn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    /* Match input color */
+    color: var(--text-secondary);
+    justify-content: center;
+    border-radius: 12px;
+    height: 44px;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.addSetBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}

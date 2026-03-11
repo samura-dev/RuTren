@@ -1,0 +1,287 @@
+.page {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px 40px;
+    gap: 24px;
+    overflow-x: hidden;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.dateTitle {
+    color: var(--text-secondary);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.progressCard {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progressCircle {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.progressText {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-accent);
+}
+
+.progressInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.progressTitle {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.progressSubtitle {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.habitsList {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Drag & Drop Styles matching SetRow */
+.habitWrapper {
+    position: relative;
+    height: 74px;
+    /* Matches habitCard height */
+    border-radius: 20px;
+    /* overflow: hidden; - Removed to allow shadow/movement if needed, but usually safer with hidden */
+}
+
+.deleteAction {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    background: linear-gradient(90deg, #ff4b4b 50%, #ff5d8f 100%);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 24px;
+    color: white;
+    z-index: 0;
+}
+
+.habitCard {
+    background: #09090b;
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    touch-action: pan-y;
+}
+
+.habitCard:active {
+    background: #1c1c1e;
+    /* Solid dark grey */
+}
+
+.habitCard.completed:active {
+    background: #1a1f14;
+    /* Solid dark green tint */
+}
+
+.habitInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.habitIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+}
+
+.habitText {
+    display: flex;
+    flex-direction: column;
+}
+
+.habitName {
+    font-weight: 500;
+    color: #fff;
+    font-size: 13px;
+}
+
+.habitStreak {
+    font-size: 10px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.streakIcon {
+    color: orange;
+}
+
+.fire {
+    color: #FF5D8F;
+}
+
+.completed {
+    border-color: rgba(157, 255, 0, 0.3);
+    background: #10140a;
+    /* Solid dark green tint */
+}
+
+.checkboxWrapper {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Styles */
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 8px;
+}
+
+.modalButton {
+    height: 52px;
+    border-radius: 16px;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.colorGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.colorBtn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.colorBtn:active {
+    transform: scale(0.9);
+}
+
+.selectedColor {
+    border-color: #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.iconGrid {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+    margin: 0 -8px;
+    padding: 0 8px 8px;
+    /* Hide scrollbar */
+    scrollbar-width: none;
+}
+
+.iconGrid::-webkit-scrollbar {
+    display: none;
+}
+
+.iconBtn {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    cursor: pointer;
+}
+
+.selectedIcon {
+    background: var(--color-accent);
+    color: #000;
+    border-color: transparent;
+}
+
+/* Кнопка-иконка в хедере */
+.headerActionBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.headerActionBtn:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Лейблы формы */
+.formLabel {
+    margin-bottom: 8px;
+    display: block;
+}

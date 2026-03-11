@@ -1,0 +1,191 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    z-index: 50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(30, 30, 30, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.monthNav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.navBtn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    color: var(--text-secondary);
+    background: rgba(255, 255, 255, 0.05);
+    transition: all 0.2s;
+}
+
+.navBtn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.closeBtn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.weekDay {
+    font-size: 9px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.dayCell {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    color: white;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dayCell:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.currentDay {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.workoutDay {
+    background: rgba(157, 255, 0, 0.1);
+    border: 1px solid rgba(157, 255, 0, 0.3);
+    color: #ccff00;
+    text-shadow: 0 0 10px rgba(157, 255, 0, 0.3);
+}
+
+.otherMonth {
+    opacity: 0.3;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+}
+
+.legendItem {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legendIconWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.legendIconWrapperWorkout {
+    background: rgba(157, 255, 0, 0.2);
+    border: 1px solid rgba(157, 255, 0, 0.4);
+    color: #ccff00;
+}
+
+.legendIconWrapperToday {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    /* Slightly different shape for 'today' if desired, or keep circle */
+}
+
+.todayDot {
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+}
+
+.legendText {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.legendTextSecondary {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

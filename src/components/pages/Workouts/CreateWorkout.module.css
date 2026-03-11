@@ -1,0 +1,80 @@
+.page {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 16px 100px;
+    gap: 32px;
+}
+
+.formSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.titleInput {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    outline: none;
+    width: 100%;
+}
+
+.titleInput::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.descInput {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    outline: none;
+    width: 100%;
+    resize: none;
+    font-family: inherit;
+}
+
+.exercisesSection {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.exercisesList {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    list-style: none;
+    padding: 0;
+}
+
+.addExerciseBtn {
+    height: 56px;
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-secondary);
+    justify-content: center;
+    border-radius: 20px;
+}
+
+/* Кнопка "Сохр." в хедере */
+.saveBtn {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+/* Иконка плюса в кнопке "Добавить" */
+.plusIcon {
+    margin-right: 8px;
+}

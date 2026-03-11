@@ -1,0 +1,30 @@
+.chip {
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chip:active {
+    transform: scale(0.95);
+}
+
+.active {
+    background: rgba(var(--color-accent-rgb), 0.15);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 10px rgba(var(--color-accent-rgb), 0.2);
+}
+
+.label {
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.activeLabel {
+    color: var(--color-accent);
+}

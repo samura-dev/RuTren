@@ -1,0 +1,98 @@
+.page {
+    padding: 24px;
+    padding-bottom: 40px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.iconWrapper {
+    width: 100px;
+    height: 100px;
+    background: rgba(157, 255, 0, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 0 40px rgba(157, 255, 0, 0.3);
+}
+
+.icon {
+    color: var(--color-accent);
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-top: -16px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    width: 100%;
+    margin: 24px 0;
+}
+
+.statCard {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.statContent {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.statValue {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+}
+
+.shareBtn {
+    width: 100%;
+    height: 56px;
+    font-size: 16px;
+}
+
+.homeBtn {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

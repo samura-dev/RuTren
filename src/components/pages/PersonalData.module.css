@@ -1,0 +1,147 @@
+.page {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    gap: 24px;
+}
+
+.avatarSection {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.avatarWrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.editAvatarBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    color: #000;
+    border: 3px solid #1a1a1a;
+    /* Match background somewhat */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-left: 4px;
+}
+
+.inputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    position: absolute;
+    left: 16px;
+    color: var(--text-secondary);
+    pointer-events: none;
+}
+
+.input {
+    width: 100%;
+    height: 52px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 0 16px 0 48px;
+    color: var(--text-primary);
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input:focus {
+    border-color: var(--color-accent);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.section {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sectionTitle {
+    margin-left: 4px;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
+.genderSelect {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    background: var(--glass-bg);
+    padding: 4px;
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+}
+
+.genderBtn {
+    width: 100%;
+    height: 44px;
+    border-radius: 16px;
+}
+
+.saveBtn {
+    width: 100%;
+    height: 56px;
+    font-size: 14px;
+    border-radius: 20px;
+    margin-top: 16px;
+}

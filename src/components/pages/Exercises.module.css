@@ -1,0 +1,214 @@
+/* ... existing styles ... */
+
+.page {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.controls {
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-shrink: 0;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.searchInput {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 13px;
+    flex: 1;
+}
+
+.searchInput::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.searchIcon {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.filtersWrapper {
+    margin: 0 -20px;
+    /* Break out of parent padding */
+}
+
+.filtersContainer {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    padding: 0 20px 8px 20px;
+    /* Padding inside scroll container */
+}
+
+/* Hide scrollbar */
+.filtersContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.filtersContainer {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0 20px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: transform 0.1s;
+}
+
+.item:active {
+    transform: scale(0.98);
+}
+
+.itemInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.itemIcon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.emptyState {
+    text-align: center;
+    padding: 40px 0;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.emptyIcon {
+    opacity: 0.5;
+}
+
+/* Creation Form */
+.creationForm {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.textInput {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px;
+    color: white;
+    outline: none;
+}
+
+.textInput:focus {
+    border-color: rgba(204, 255, 0, 0.5);
+}
+
+.chipGroup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.actionButtons {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.actionBtn {
+    flex: 1;
+}
+
+/* Кнопка-иконка в хедере */
+.headerActionBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.headerActionBtn:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Имя упражнения в списке */
+.itemName {
+    font-weight: 600;
+}
+
+/* Подпись группы мышц */
+.itemCaption {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Кнопка "Предложить упражнение" */
+.suggestBtn {
+    color: var(--color-accent);
+}

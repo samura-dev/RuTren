@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+}
+
+.title {
+    margin-bottom: 4px;
+}
+
+.chartContainer {
+    display: flex;
+    height: 180px;
+    position: relative;
+}
+
+.yAxis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-right: 8px;
+    height: 150px;
+    /* Match viewBox height roughly */
+}
+
+.graphArea {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.xAxis {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 10px;
+    margin-top: -10px;
+    /* Pull up closer to graph */
+}
+
+.xLabel {
+    opacity: 0.5;
+    font-size: 9px;
+}

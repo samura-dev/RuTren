@@ -1,0 +1,149 @@
+.page {
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 120px;
+}
+
+
+.subtitle {
+    display: block;
+    margin-bottom: 4px;
+    opacity: 0.7;
+}
+
+.timerWidget {
+    margin: 0 16px 30px;
+    /* Restore side margins for content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 24px !important;
+    /* Increased vertical padding */
+    border: 1.5px solid var(--color-accent) !important;
+    gap: 8px;
+    /* Glass Styles from GlassCard */
+    border-radius: 24px;
+    background-color: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    color: var(--text-primary);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.12),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.timerLabel {
+    color: var(--text-secondary);
+    font-weight: 500;
+    font-size: 13px;
+}
+
+.mainTimer {
+    font-size: 54px;
+    /* Larger font size as in design */
+    font-weight: 500;
+    color: var(--color-accent);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin-bottom: 8px;
+}
+
+.statsRow {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statItem {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.flameIcon {
+    color: var(--color-accent);
+}
+
+.statValue {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.statValue Text {
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0 16px;
+}
+
+.startWorkoutBtn {
+    width: 100%;
+    height: 56px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 20px rgba(157, 255, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.startWorkoutBtn svg {
+    margin-right: 10px;
+}
+
+.footer {
+    margin: 24px 16px 40px;
+}
+
+.finishBtn {
+    width: 100%;
+    height: 64px !important;
+    justify-content: center;
+    background: var(--color-accent) !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    font-size: 16px !important;
+    border-radius: 24px !important;
+    box-shadow: 0 8px 24px rgba(157, 255, 0, 0.4);
+    text-transform: none;
+}
+
+/* Кнопка-иконка в хедере */
+.headerActionBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.headerActionBtn:active {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Отступ между элементами */
+.spacer {
+    height: 16px;
+}
+
+/* Иконка плея */
+.playIcon {
+    margin-right: 8px;
+}

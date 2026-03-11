@@ -1,0 +1,111 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    padding-top: calc(var(--tg-content-safe-area-inset-top, var(--tg-safe-area-inset-top, max(env(safe-area-inset-top), 48px))) + 16px);
+    width: 100%;
+}
+
+.leftSlot,
+.rightSlot {
+    flex: 0 0 40px;
+    /* Fixed width for slots to ensure center is truly center */
+    display: flex;
+    align-items: center;
+}
+
+.rightSlot {
+    justify-content: flex-end;
+}
+
+.centerSlot {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    /* Default to center? Or control via prop? */
+    min-width: 0;
+    /* Text truncate support */
+}
+
+/* Default left-aligned behavior (Dashboard) */
+.header:not(.centered) .centerSlot {
+    justify-content: flex-start;
+    padding-left: 12px;
+}
+
+.header:not(.centered) .leftSlot {
+    width: auto;
+    flex: 0 0 auto;
+}
+
+.header:not(.centered) .titleContainer {
+    align-items: flex-start;
+    text-align: left;
+}
+
+
+/* Centered behavior (Workout) */
+.centered .centerSlot {
+    justify-content: center;
+}
+
+.centered .titleContainer {
+    align-items: center;
+    text-align: center;
+}
+
+.centered .title {
+    font-size: 18px !important;
+    font-weight: 700;
+}
+
+/* Common Styles */
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 2px;
+}
+
+.backButton {
+    padding: 20px 0;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: -8px;
+    /* Visual compensation */
+}
+
+.avatarContainer {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #333;
+    gap: 4px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.action {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,29 @@
+:root {
+  /* Colors */
+  --color-accent: #9DFF00;
+  --color-danger: #FF6060;
+  --color-bg: #000000;
+
+  /* Text */
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.6);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 4px;
+  --glass-layer: rgba(83, 83, 83, 0.4);
+  --overlay-bg: rgba(0, 0, 0, 0.6);
+
+  /* Spacing */
+  --screen-padding: 20px;
+  --radius-card: 20px;
+  --radius-btn: 12px;
+  --radius-input: 16px;
+
+  /* Font */
+  --font-main: 'Montserrat', sans-serif;
+
+  /* Background Image */
+  --bg-image: url('/bg.png');
+}

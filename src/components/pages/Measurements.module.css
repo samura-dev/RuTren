@@ -1,0 +1,218 @@
+.page {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px 40px;
+    gap: 24px;
+}
+
+.mainCard {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.mainCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    opacity: 0.5;
+}
+
+.mainCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.iconWrapper {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(157, 255, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainIcon {
+    color: var(--color-accent);
+}
+
+.mainCardTitle {
+    display: flex;
+    flex-direction: column;
+}
+
+.mainValueContainer {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.mainValue {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.unit {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.diffPositive {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: var(--color-accent);
+    background: rgba(157, 255, 0, 0.1);
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sectionTitle {
+    margin-left: 4px;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    transition: transform 0.2s;
+}
+
+.card:active {
+    transform: scale(0.98);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.label {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.valueRow {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.value {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.diff {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+.goodDiff {
+    color: var(--color-accent);
+}
+
+.saveBtn {
+    width: 100%;
+    height: 56px;
+    font-size: 14px;
+    border-radius: 20px;
+    margin-top: auto;
+}
+
+.modalForm {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 8px;
+}
+
+.currentValueBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+}
+
+.currentValueTitle {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.currentValue {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    font-variant-numeric: tabular-nums;
+}
+
+.modalButton {
+    height: 52px;
+    border-radius: 16px;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+/* Кнопка-иконка в хедере */
+.headerActionBtn {
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+}
+
+.headerActionBtn:active {
+    background: rgba(255, 255, 255, 0.1);
+}

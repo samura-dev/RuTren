@@ -1,0 +1,126 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-main);
+    position: relative;
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.button:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    filter: grayscale(0.5);
+}
+
+.button:active {
+    transform: scale(0.96);
+}
+
+/* Sizes - Override variant heights */
+.sm {
+    height: 32px !important;
+    padding: 0 12px !important;
+    font-size: 11px !important;
+    border-radius: 10px !important;
+}
+
+.md {
+    height: 44px;
+    padding: 0 20px;
+    font-size: 13px;
+}
+
+.lg {
+    height: 52px;
+    padding: 0 28px;
+    font-size: 14px;
+}
+
+.iconSize {
+    height: 44px;
+    width: 44px;
+    padding: 0;
+}
+
+/* Variants */
+.primary {
+    background: linear-gradient(135deg, var(--color-accent) 0%, #b8e600 100%);
+    color: #000000;
+    /* Default to lgish if no size */
+    min-height: 48px;
+    padding: 0 24px;
+    border-radius: 16px;
+    font-size: 14px;
+    box-shadow:
+        0 4px 20px rgba(157, 255, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.4);
+}
+
+.primary:hover {
+    box-shadow:
+        0 8px 30px rgba(157, 255, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.6);
+    transform: translateY(-1px);
+}
+
+.primary:active {
+    transform: scale(0.96) translateY(0);
+}
+
+.ghost {
+    background-color: transparent;
+    color: var(--text-secondary);
+    /* Default to sm/md */
+    min-height: 40px;
+    padding: 0 16px;
+    font-size: 13px;
+    border-radius: 12px;
+}
+
+.ghost:hover {
+    color: var(--text-primary);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.outline {
+    background-color: transparent;
+    border: 1.5px solid rgba(157, 255, 0, 0.3);
+    color: var(--color-accent);
+    /* Default */
+    min-height: 48px;
+    border-radius: 14px;
+    padding: 0 24px;
+    box-shadow: 0 0 10px rgba(157, 255, 0, 0.05);
+}
+
+.outline:hover {
+    background-color: rgba(157, 255, 0, 0.05);
+    border-color: var(--color-accent);
+    box-shadow: 0 0 15px rgba(157, 255, 0, 0.1);
+}
+
+.icon {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.icon:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
