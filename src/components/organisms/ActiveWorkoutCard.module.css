@@ -1,11 +1,11 @@
 .card {
     /* Wrapper styles: Background, dimensions, border */
-    min-height: 180px;
+    min-height: 153px;
     cursor: pointer;
     background: linear-gradient(135deg, rgba(20, 20, 20, 0.9) 0%, rgba(30, 30, 30, 0.6) 100%);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: transform 0.2s ease, border-color 0.2s ease;
-    border-radius: 24px;
+    border-radius: 20px;
 }
 
 .content {
@@ -13,9 +13,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 20px;
+    gap: 17px;
     /* Gap between Header, Title, Progress, Footer */
-    padding: 20px;
+    padding: 17px;
     /* Internal Padding */
     height: 100%;
 }
@@ -28,11 +28,11 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
 }
 
 .title {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.1;
     color: #fff;
@@ -41,15 +41,15 @@
 
 .progressContainer {
     width: 100%;
-    height: 32px;
+    height: 27px;
     background: rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
+    border-radius: 10px;
     /* Rounded container */
     overflow: hidden;
     position: relative;
-    padding: 4px;
+    padding: 3px;
     /* Internal padding for "capsule" look if desired? No, usually fill is flush. */
-    /* If user says "huge margins", maybe my gap: 12px was too much? Or padding in card? 20px is standard.
+    /* If user says "huge margins", maybe my gap: 10px was too much? Or padding in card? 17px is standard.
        User said "elements inside don't have spacing".
     */
 }
@@ -58,7 +58,7 @@
     width: 100%;
     height: 100%;
     position: relative;
-    border-radius: 8px;
+    border-radius: 7px;
     /* Inner radius matching container minus padding if any, or just matches */
     overflow: hidden;
 }
@@ -66,7 +66,7 @@
 .progressFill {
     height: 100%;
     background: var(--color-accent);
-    border-radius: 8px;
+    border-radius: 7px;
     /* Fully rounded corners */
     box-shadow: 0 0 20px rgba(157, 255, 0, 0.4);
 }
@@ -75,7 +75,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 11px;
+    font-size: 10px;
     opacity: 0.8;
 }
 

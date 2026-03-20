@@ -5,11 +5,12 @@ import { StatCard } from '../molecules/StatCard';
 import { ActiveWorkoutCard } from '../organisms/ActiveWorkoutCard';
 import { Flame, Clock, Dumbbell } from 'lucide-react';
 import { FullCalendarModal } from '../organisms/FullCalendarModal';
+import { SEO } from '../SEO';
 import styles from './Dashboard.module.css';
 
 // Stores
 import { useWorkoutStore } from '@/stores/useWorkoutStore';
-// import { useUserStore } from '@/stores/useUserStore';
+import { useMeasurementStore } from '@/stores/useMeasurementStore';
 
 export function DashboardPage() {
     const navigate = useNavigate();
@@ -17,7 +18,7 @@ export function DashboardPage() {
 
     // Stores
     const { workoutDates, activeWorkout, programs, history } = useWorkoutStore();
-    // const { user } = useUserStore();
+    const { measurements } = useMeasurementStore();
 
     // Determine current active workout details
     const activeProgram = activeWorkout
@@ -27,10 +28,16 @@ export function DashboardPage() {
     // Calculate real stats from history
     const totalCalories = history.reduce((sum, h) => sum + (h.calories || 0), 0);
     const totalMinutes = history.reduce((sum, h) => sum + Math.round((h.duration || 0) / 60), 0);
-    const totalVolumeWeight = history.reduce((sum, h) => sum + (h.totalVolume || 0), 0);
+
+    // Get real body weight
+    const weightEntry = measurements.find(m => m.id === 'weight' || m.label.toLowerCase().includes('вес'));
+    const currentWeight = weightEntry?.history && weightEntry.history.length > 0
+        ? parseFloat(weightEntry.history[weightEntry.history.length - 1].value) || 0
+        : 0;
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Главная" />
             {/* Stats Row */}
             <section className={styles.statsRow}>
                 <StatCard
@@ -50,8 +57,8 @@ export function DashboardPage() {
                 />
                 <StatCard
                     variant="vertical"
-                    label="Вес"
-                    value={totalVolumeWeight.toLocaleString('ru-RU')}
+                    label="Вес тела"
+                    value={currentWeight > 0 ? currentWeight.toString() : '—'}
                     unit="кг"
                     icon={<Dumbbell size={20} />}
                 />

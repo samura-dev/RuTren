@@ -8,6 +8,7 @@ import { ExerciseSelector } from './ExerciseSelector';
 import { EditableExerciseCard } from './EditableExerciseCard';
 import { Plus, Save, Type, FileText } from 'lucide-react';
 import { Reorder, AnimatePresence } from 'framer-motion';
+import { SEO } from '../../SEO';
 import styles from './CreateWorkout.module.css';
 
 // Store & Types
@@ -30,10 +31,12 @@ export function EditWorkout() {
     // Загружаем данные программы при маунте
     useEffect(() => {
         if (program) {
-            setTitle(program.title);
-            setSubtitle(program.subtitle);
-            setType(program.type);
-            setExercises([...program.exercises]);
+            setTimeout(() => {
+                setTitle(program.title);
+                setSubtitle(program.subtitle);
+                setType(program.type);
+                setExercises([...program.exercises]);
+            }, 0);
         }
     }, [program?.id]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -67,6 +70,7 @@ export function EditWorkout() {
     if (!program) {
         return (
             <div className={styles.page}>
+                <SEO title="RuTren - Программа не найдена" />
                 <Header title="Не найдено" showBack onBack={() => navigate(-1)} centered />
                 <div style={{ padding: 20, textAlign: 'center' }}>
                     <Text>Программа не найдена</Text>
@@ -77,6 +81,7 @@ export function EditWorkout() {
 
     return (
         <div className={styles.page}>
+            <SEO title={`RuTren - ${title || 'Редактировать'}`} />
             <Header
                 title="Редактировать"
                 centered

@@ -5,6 +5,7 @@ import { Header } from '../organisms/Header';
 import { Button } from '../atoms/Button';
 import { Text, Caption } from '../atoms/Typography';
 import { FilterChip } from '../molecules/FilterChip';
+import { SEO } from '../SEO';
 import styles from './Exercises.module.css';
 
 // Store & Types
@@ -47,6 +48,7 @@ export function ExercisesPage() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Упражнения" />
             <Header
                 title="Упражнения"
                 centered

@@ -1,3 +1,4 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../organisms/Header';
 import { Text, Caption } from '../atoms/Typography';
@@ -13,6 +14,7 @@ import {
 } from 'lucide-react';
 import { Button } from '../atoms/Button';
 import { cn } from '@/utils/cn';
+import { SEO } from '../SEO';
 import styles from './Profile.module.css';
 import { useUserStore } from '@/stores/useUserStore';
 import { useWorkoutStore } from '@/stores/useWorkoutStore';
@@ -32,6 +34,7 @@ export function Profile() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Профиль" />
             <Header
                 title="Профиль"
                 centered
@@ -105,7 +108,7 @@ function StatBox({ value, label }: { value: string, label: string }) {
     );
 }
 
-function MenuItem({ icon, label, value, onClick, isDestructive }: { icon: any, label: string, value?: string, onClick?: () => void, isDestructive?: boolean }) {
+function MenuItem({ icon, label, value, onClick, isDestructive }: { icon: React.ReactNode, label: string, value?: string, onClick?: () => void, isDestructive?: boolean }) {
     return (
         <div className={cn(styles.menuItem, isDestructive && styles.destructive)} onClick={onClick}>
             <div className={styles.menuIcon}>{icon}</div>

@@ -5,6 +5,7 @@ import { GlassCard } from '../atoms/GlassCard';
 import { ExerciseCard } from '../organisms/ExerciseCard';
 import { Clock, Flame, Dumbbell, Weight } from 'lucide-react';
 import { useWorkoutStore } from '@/stores/useWorkoutStore';
+import { SEO } from '../SEO';
 import styles from './HistoryDetail.module.css';
 
 export function HistoryDetail() {
@@ -17,6 +18,7 @@ export function HistoryDetail() {
     if (!record) {
         return (
             <div className={styles.page}>
+                <SEO title="RuTren - Запись не найдена" />
                 <Header title="Не найдено" showBack onBack={() => navigate(-1)} centered />
                 <div className={styles.emptyState}>
                     <Text>Запись не найдена</Text>
@@ -47,6 +49,7 @@ export function HistoryDetail() {
 
     return (
         <div className={styles.page}>
+            <SEO title={`RuTren - ${record.title}`} />
             <Header
                 title={record.title}
                 showBack

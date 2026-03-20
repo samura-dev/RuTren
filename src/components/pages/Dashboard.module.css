@@ -1,23 +1,23 @@
 .page {
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding: 16px;
-    padding-top: 24px;
-    padding-bottom: 110px;
+    gap: 20px;
+    padding: 14px;
+    padding-top: 20px;
+    padding-bottom: 94px;
     /* Space for BottomNav */
 }
 
 .section {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .statsRow {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 10px;
     /* Ensure grid doesn't blowout on small screens */
     min-width: 0;
 }
@@ -35,7 +35,7 @@
 .placeholderText {
     opacity: 0.5;
     text-align: center;
-    padding: 20px;
+    padding: 17px;
     border: 1px dashed rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
+    border-radius: 10px;
 }

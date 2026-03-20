@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-bottom: 100px;
+    padding-bottom: 85px;
 }
 
 .content {
@@ -11,8 +11,8 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding: 20px;
+    gap: 20px;
+    padding: 17px;
 }
 
 .content::-webkit-scrollbar {
@@ -30,53 +30,53 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    padding: 60px 20px;
+    gap: 14px;
+    padding: 51px 17px;
     text-align: center;
 }
 
 .emptyIcon {
     color: rgba(255, 255, 255, 0.15);
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .emptyTitle {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .emptyCaption {
     color: var(--text-secondary);
-    max-width: 240px;
+    max-width: 204px;
 }
 
 /* Секция по дате */
 .dateSection {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .dateLabel {
-    font-size: 13px !important;
+    font-size: 11px !important;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     color: var(--text-secondary) !important;
-    padding-left: 4px;
+    padding-left: 3px;
 }
 
 .cardList {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 9px;
 }
 
 /* Карточка истории */
 .historyCard {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    padding: 16px 20px;
+    border-radius: 17px;
+    padding: 14px 17px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -92,15 +92,15 @@
 .cardLeft {
     display: flex;
     align-items: center;
-    gap: 14px;
+    gap: 12px;
     flex: 1;
     min-width: 0;
 }
 
 .cardIcon {
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
+    width: 37px;
+    height: 37px;
+    border-radius: 12px;
     background: rgba(204, 255, 0, 0.1);
     display: flex;
     align-items: center;
@@ -125,13 +125,13 @@
 
 .cardMeta {
     color: var(--text-secondary);
-    font-size: 11px;
+    font-size: 10px;
 }
 
 .cardRight {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     flex-shrink: 0;
 }
 
@@ -145,7 +145,7 @@
 .miniStat {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
 }
 
 .flameIcon {

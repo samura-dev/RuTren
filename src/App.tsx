@@ -9,6 +9,7 @@ import { Profile } from './components/pages/Profile';
 import { PersonalData } from './components/pages/PersonalData';
 import { Measurements } from './components/pages/Measurements';
 import { Settings } from './components/pages/Settings';
+import { Privacy } from './components/pages/Privacy';
 import { Onboarding } from './components/pages/Onboarding';
 import { Habits } from './components/pages/Habits';
 import { Analytics } from './components/pages/Analytics';
@@ -22,6 +23,10 @@ import { History } from './components/pages/History';
 import { HistoryDetail } from './components/pages/HistoryDetail';
 import { ToastProvider } from './components/atoms/Toast';
 import { useUserStore } from './stores/useUserStore';
+import { useAuthStore } from './stores/useAuthStore';
+import { useWorkoutStore } from './stores/useWorkoutStore';
+import { useHabitStore } from './stores/useHabitStore';
+import { useMeasurementStore } from './stores/useMeasurementStore';
 
 // Анимация переходов между страницами
 const pageVariants = {
@@ -81,6 +86,7 @@ function AnimatedRoutes() {
           {/* Прочее */}
           <Route path="/analytics" element={<Analytics />} />
           <Route path="/settings" element={<Settings />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="/onboarding" element={<Onboarding />} />
 
           {/* Fallback */}
@@ -94,8 +100,30 @@ function AnimatedRoutes() {
 import { useTelegram } from './hooks/useTelegram';
 
 function App() {
-  const { user, setUser } = useUserStore();
+  const { user, setUser, syncProfile } = useUserStore();
   const { user: tgUser, isReady } = useTelegram();
+
+  const initializeAuth = useAuthStore(state => state.initialize);
+  const authUser = useAuthStore(state => state.user);
+  
+  const syncWorkouts = useWorkoutStore(state => state.syncWorkouts);
+  const syncHabits = useHabitStore(state => state.syncHabits);
+  const syncMeasurements = useMeasurementStore(state => state.syncMeasurements);
+
+  useEffect(() => {
+    const unsubscribe = initializeAuth();
+    useAuthStore.getState().autoLogin(); // Setup dev authentication
+    return () => unsubscribe();
+  }, [initializeAuth]);
+
+  useEffect(() => {
+    if (authUser) {
+       syncProfile();
+       syncWorkouts();
+       syncHabits();
+       syncMeasurements();
+    }
+  }, [authUser, syncProfile, syncWorkouts, syncHabits, syncMeasurements]);
 
   useEffect(() => {
     if (user.settings.darkTheme) {
@@ -118,6 +146,7 @@ function App() {
         }
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isReady, tgUser?.id]);
 
   return (

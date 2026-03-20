@@ -3,6 +3,7 @@ import { Button } from '../atoms/Button';
 import { SectionTitle, Text, Caption } from '../atoms/Typography';
 import { GlassCard } from '../atoms/GlassCard';
 import { CheckCircle, Share2, Home, Trophy } from 'lucide-react';
+import { SEO } from '../SEO';
 import styles from './WorkoutSummary.module.css';
 import { useEffect } from 'react';
 import type { WorkoutHistory } from '@/types';
@@ -42,6 +43,7 @@ export function WorkoutSummary() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Итоги тренировки" />
             <div className={styles.content}>
                 <div className={styles.iconWrapper}>
                     <CheckCircle size={64} className={styles.icon} />
@@ -78,11 +80,7 @@ export function WorkoutSummary() {
                 </div>
 
                 <div className={styles.actions}>
-                    <Button variant="primary" className={styles.shareBtn}>
-                        <Share2 size={20} />
-                        Поделиться
-                    </Button>
-                    <Button variant="ghost" onClick={() => navigate('/dashboard')} className={styles.homeBtn}>
+                    <Button variant="primary" onClick={() => navigate('/dashboard')} className={styles.homeBtn}>
                         <Home size={20} />
                         На главную
                     </Button>

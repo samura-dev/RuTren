@@ -9,8 +9,8 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding: 20px 16px 40px;
-    gap: 24px;
+    padding: 17px 14px 34px;
+    gap: 20px;
     overflow-x: hidden;
 }
 
@@ -18,11 +18,11 @@
 .statsCard {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    padding: 24px;
+    border-radius: 20px;
+    padding: 20px;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 17px;
     position: relative;
     overflow: hidden;
 }
@@ -39,9 +39,9 @@
 }
 
 .trophyIconWrapper {
-    width: 64px;
-    height: 64px;
-    border-radius: 20px;
+    width: 54px;
+    height: 54px;
+    border-radius: 17px;
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 165, 0, 0.1));
     display: flex;
     align-items: center;
@@ -59,7 +59,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 7px;
 }
 
 .statsSubtitle {
@@ -67,10 +67,10 @@
 }
 
 .progressBarBg {
-    height: 6px;
+    height: 5px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
-    margin-top: 8px;
+    margin-top: 7px;
     overflow: hidden;
 }
 
@@ -85,16 +85,16 @@
 .list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .card {
     background: #09090b;
     border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 16px;
+    border-radius: 17px;
+    padding: 14px;
     display: flex;
-    gap: 16px;
+    gap: 14px;
     align-items: flex-start;
     transition: all 0.2s;
 }
@@ -107,9 +107,9 @@
 
 /* Rarities */
 .iconBox {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
+    width: 41px;
+    height: 41px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -155,7 +155,7 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 3px;
 }
 
 .cardHeader {
@@ -166,19 +166,19 @@
 
 .title {
     font-weight: 600;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .date {
-    font-size: 10px;
+    font-size: 9px;
     color: var(--text-secondary);
     background: rgba(255, 255, 255, 0.05);
-    padding: 2px 6px;
-    border-radius: 6px;
+    padding: 2px 5px;
+    border-radius: 5px;
 }
 
 .description {
-    font-size: 11px;
+    font-size: 10px;
     line-height: 1.4;
     color: var(--text-secondary);
 }
@@ -186,13 +186,13 @@
 .progressRow {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-top: 8px;
+    gap: 10px;
+    margin-top: 7px;
 }
 
 .miniProgressBg {
     flex: 1;
-    height: 4px;
+    height: 3px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
     overflow: hidden;
@@ -206,7 +206,7 @@
 }
 
 .progressText {
-    font-size: 10px;
+    font-size: 9px;
     color: var(--text-secondary);
     font-family: monospace;
 }

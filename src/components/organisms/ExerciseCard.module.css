@@ -3,7 +3,7 @@
 }
 
 .header {
-    padding: 16px 20px;
+    padding: 14px 17px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,21 +13,21 @@
 .infoContainer {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .indexBadge {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background: rgba(255, 255, 255, 0.1);
     /* Neutral default */
     color: var(--text-primary);
-    border-radius: 6px;
+    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 11px;
     flex-shrink: 0;
     transition: all 0.3s ease;
 }
@@ -45,39 +45,39 @@
 }
 
 .title {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .actions {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 
 .meta {
     background: rgba(255, 255, 255, 0.05);
-    padding: 4px 10px;
-    border-radius: 8px;
+    padding: 3px 9px;
+    border-radius: 7px;
     white-space: nowrap;
     flex-shrink: 0;
 }
 
 .metaText {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 500;
 }
 
 .iconBtn {
-    width: 32px !important;
-    height: 32px !important;
-    min-height: 32px !important;
+    width: 27px !important;
+    height: 27px !important;
+    min-height: 27px !important;
     padding: 0 !important;
 }
 
 .content {
     background: rgba(0, 0, 0, 0.2);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 0 10px;
+    padding: 0 9px;
     /* Added side padding as requested */
 }
 
@@ -86,9 +86,9 @@
     /* Remove padding as requested */
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
     /* Ensure gap allows spacing between items */
-    margin-top: 12px;
+    margin-top: 10px;
     /* Add some top spacing if needed so first item doesn't hit header directly? User said "remove padding but give elements spacing". */
 }
 
@@ -99,37 +99,37 @@
 }
 
 .setNumber {
-    width: 60px;
+    width: 51px;
 }
 
 .setInputs {
     display: flex;
-    gap: 12px;
+    gap: 10px;
 }
 
 .inputPill {
     background: rgba(255, 255, 255, 0.05);
-    padding: 6px 16px;
-    border-radius: 8px;
-    min-width: 70px;
+    padding: 5px 14px;
+    border-radius: 7px;
+    min-width: 60px;
     text-align: center;
 }
 
 .setCheck {
-    width: 32px;
+    width: 27px;
     display: flex;
     justify-content: flex-end;
 }
 
 .checkbox {
-    width: 24px;
-    height: 24px;
-    border-radius: 6px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer {
-    padding: 12px 20px;
+    padding: 10px 17px;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -139,9 +139,9 @@
     /* Match input color */
     color: var(--text-secondary);
     justify-content: center;
-    border-radius: 12px;
-    height: 44px;
-    gap: 8px;
+    border-radius: 10px;
+    height: 37px;
+    gap: 7px;
     font-weight: 500;
 }
 

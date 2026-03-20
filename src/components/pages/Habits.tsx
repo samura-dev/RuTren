@@ -9,6 +9,7 @@ import { FormInput } from '../molecules/FormInput';
 import { Plus, Flame, Trash2 } from 'lucide-react';
 import { motion, type PanInfo, useAnimation } from 'framer-motion';
 import { cn } from '@/utils/cn';
+import { SEO } from '../SEO';
 import styles from './Habits.module.css';
 
 // Store & Data
@@ -46,6 +47,7 @@ export function Habits() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Привычки" />
             <Header
                 title="Привычки"
                 showBack
@@ -146,7 +148,7 @@ function SwipeableHabitCard({ habit, onToggle, onDelete }: { habit: Habit, onTog
     const controls = useAnimation();
     const IconComponent = HABIT_ICON_MAP[habit.iconId];
 
-    const handleDragEnd = async (_: any, info: PanInfo) => {
+    const handleDragEnd = async (_: unknown, info: PanInfo) => {
         if (info.offset.x < -80) {
             await controls.start({ x: -100, opacity: 0 });
             onDelete();

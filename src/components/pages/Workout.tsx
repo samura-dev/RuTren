@@ -9,6 +9,7 @@ import { FinishWorkoutModal } from '../organisms/FinishWorkoutModal';
 import { calculateCalories } from '@/utils/calories';
 import { useWorkoutStore } from '@/stores/useWorkoutStore';
 import { useUserStore } from '@/stores/useUserStore';
+import { SEO } from '../SEO';
 import type { WorkoutSet, WorkoutExercise } from '@/types';
 import styles from './Workout.module.css';
 
@@ -54,17 +55,19 @@ export function Workout() {
         const history = getHistoryById(id);
         if (history) {
             // Режим просмотра завершённой тренировки
-            setHistoryMode(true);
-            setHistoryData({
-                title: history.title,
-                subtitle: history.subtitle,
-                exercises: history.exercises,
-                duration: history.duration,
-                calories: history.calories,
-            });
-            setDuration(history.duration);
-            setCurrentCalories(history.calories);
-            setIsStarted(true);
+            setTimeout(() => {
+                setHistoryMode(true);
+                setHistoryData({
+                    title: history.title,
+                    subtitle: history.subtitle,
+                    exercises: history.exercises,
+                    duration: history.duration,
+                    calories: history.calories,
+                });
+                setDuration(history.duration);
+                setCurrentCalories(history.calories);
+                setIsStarted(true);
+            }, 0);
             return;
         }
 
@@ -78,8 +81,10 @@ export function Workout() {
     // Синхронизация с activeWorkout (если восстанавливаем сессию)
     useEffect(() => {
         if (activeWorkout && !historyMode) {
-            setDuration(activeWorkout.duration);
-            setCurrentCalories(activeWorkout.calories);
+            setTimeout(() => {
+                setDuration(activeWorkout.duration);
+                setCurrentCalories(activeWorkout.calories);
+            }, 0);
         }
     }, [activeWorkout?.programId]); // eslint-disable-line react-hooks/exhaustive-deps
 
@@ -167,6 +172,7 @@ export function Workout() {
     if (!historyMode && !activeWorkout && !getProgramById(id || '')) {
         return (
             <div className={styles.page}>
+                <SEO title="RuTren - Загрузка..." />
                 <Header title="Загрузка..." showBack onBack={() => navigate(-1)} />
             </div>
         );
@@ -174,6 +180,7 @@ export function Workout() {
 
     return (
         <div className={styles.page}>
+            <SEO title={`RuTren - ${title}`} />
             <Header
                 title={title}
                 showBack

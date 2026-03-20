@@ -31,7 +31,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
     color: rgba(255, 255, 255, 0.3);
 }
 
@@ -41,21 +41,21 @@
 
 /* Main Details Container */
 .detailsContainer {
-    padding: 24px 20px 100px;
+    padding: 20px 17px 85px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 27px;
 }
 
 /* Header Section */
 .headerSection {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 700;
     line-height: 1.2;
 }
@@ -63,17 +63,17 @@
 .chipsContainer {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 7px;
 }
 
 .chip {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
+    gap: 5px;
+    padding: 7px 10px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    font-size: 11px;
+    border-radius: 9px;
+    font-size: 10px;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
 }
@@ -82,7 +82,7 @@
 .section {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .sectionHeader {
@@ -92,7 +92,7 @@
 }
 
 .sectionTitle {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: white;
 }
@@ -100,28 +100,28 @@
 .description {
     color: rgba(255, 255, 255, 0.7);
     line-height: 1.6;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 /* Steps List */
 .stepsList {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 17px;
 }
 
 .stepItem {
     display: flex;
-    gap: 16px;
+    gap: 14px;
 }
 
 .stepNumber {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: #ccff00;
     color: black;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     display: flex;
     align-items: center;
@@ -134,7 +134,7 @@
 .stepText {
     color: rgba(255, 255, 255, 0.75);
     line-height: 1.5;
-    font-size: 13px;
+    font-size: 11px;
     flex: 1;
 }
 
@@ -145,7 +145,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    padding: 34px;
     text-align: center;
-    gap: 16px;
+    gap: 14px;
 }

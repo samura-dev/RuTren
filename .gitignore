@@ -28,3 +28,7 @@ dist-ssr
 .agent
 .agent*
 **/.agent/**
+
+# PocketBase Backend
+pb_data/
+pocketbase.exe

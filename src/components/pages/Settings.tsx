@@ -1,9 +1,11 @@
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Header } from '../organisms/Header';
 import { Text, Caption } from '../atoms/Typography';
 import { Switch } from '../atoms/Switch';
 import { Button } from '../atoms/Button';
 import { ChevronRight, Moon, Globe, Bell, Shield, MoreHorizontal } from 'lucide-react';
+import { SEO } from '../SEO';
 import styles from './Settings.module.css';
 import { useUserStore } from '@/stores/useUserStore';
 
@@ -22,6 +24,7 @@ export function Settings() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Настройки" />
             <Header
                 title="Настройки"
                 showBack
@@ -46,12 +49,6 @@ export function Settings() {
                         control={<Switch checked={settings.darkTheme} onCheckedChange={handleThemeChange} />}
                     />
                     <SettingsItem
-                        icon={<Globe size={20} />}
-                        label="Язык"
-                        value={settings.language === 'ru' ? 'Русский' : 'English'}
-                        showArrow
-                    />
-                    <SettingsItem
                         icon={<Bell size={20} />}
                         label="Уведомления"
                         control={<Switch checked={settings.notifications} onCheckedChange={handleNotificationsChange} />}
@@ -62,11 +59,13 @@ export function Settings() {
             <div className={styles.section}>
                 <Caption className={styles.sectionTitle}>Безопасность</Caption>
                 <div className={styles.cardGroup}>
-                    <SettingsItem
-                        icon={<Shield size={20} />}
-                        label="Конфиденциальность"
-                        showArrow
-                    />
+                    <div onClick={() => navigate('/privacy')}>
+                        <SettingsItem
+                            icon={<Shield size={20} />}
+                            label="Политика конфиденциальности"
+                            showArrow
+                        />
+                    </div>
                 </div>
             </div>
 
@@ -77,7 +76,7 @@ export function Settings() {
     );
 }
 
-function SettingsItem({ icon, label, value, control, showArrow }: { icon: any, label: string, value?: string, control?: any, showArrow?: boolean }) {
+function SettingsItem({ icon, label, value, control, showArrow }: { icon: React.ReactNode, label: string, value?: string, control?: React.ReactNode, showArrow?: boolean }) {
     return (
         <div className={styles.item}>
             <div className={styles.iconWrapper}>{icon}</div>

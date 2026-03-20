@@ -5,6 +5,7 @@ import { Caption } from '../atoms/Typography';
 import { FormInput } from '../molecules/FormInput';
 import { Button } from '../atoms/Button';
 import { User, Calendar, Ruler, Weight } from 'lucide-react';
+import { SEO } from '../SEO';
 import styles from './PersonalData.module.css';
 import { useUserStore } from '@/stores/useUserStore';
 
@@ -33,6 +34,7 @@ export function PersonalData() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Личные данные" />
             <Header
                 title="Личные данные"
                 showBack

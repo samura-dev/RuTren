@@ -3,6 +3,7 @@ import { Header } from '@/components/organisms/Header';
 import { Button } from '@/components/atoms/Button';
 import { Text, PageTitle, Caption } from '@/components/atoms/Typography';
 import { Dumbbell, Box } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 import styles from './ExerciseDetails.module.css';
 
 // Store
@@ -21,6 +22,7 @@ export function ExerciseDetails() {
     if (!exercise) {
         return (
             <div className={styles.page}>
+                <SEO title="RuTren - Упражнение не найдено" />
                 <Header title="Упражнение" showBack onBack={() => navigate(-1)} centered />
                 <div className={styles.emptyState}>
                     <Text>Упражнение не найдено</Text>
@@ -34,6 +36,7 @@ export function ExerciseDetails() {
 
     return (
         <div className={styles.page}>
+            <SEO title={`RuTren - ${exercise.name}`} />
             <Header
                 title="Упражнение"
                 showBack

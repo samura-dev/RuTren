@@ -10,5 +10,5 @@
     backdrop-filter: blur(8px);
     /* Stronger blur */
     -webkit-backdrop-filter: blur(8px);
-    padding: 16px;
+    padding: 14px;
 }

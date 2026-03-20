@@ -1,8 +1,10 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Bell, CheckCircle, Info, AlertTriangle } from 'lucide-react';
 import { Text, SectionTitle } from '../atoms/Typography';
 import { cn } from '@/utils/cn';
+import { useWorkoutStore } from '@/stores/useWorkoutStore';
+import { useHabitStore } from '@/stores/useHabitStore';
 import styles from './NotificationsModal.module.css';
 
 interface Notification {
@@ -18,33 +20,80 @@ interface NotificationsModalProps {
     onClose: () => void;
 }
 
-// Mock Data
-const NOTIFICATIONS: Notification[] = [
-    {
-        id: '1',
-        type: 'success',
-        title: 'Тренировка завершена!',
-        message: 'Вы отлично поработали сегодня. Так держать!',
-        time: '2 часа назад'
-    },
-    {
-        id: '2',
-        type: 'info',
-        title: 'Новое достижение',
-        message: 'Вы выполнили 10 тренировок подряд.',
-        time: 'Вчера'
-    },
-    {
-        id: '3',
-        type: 'warning',
-        title: 'Напоминание',
-        message: 'Не забудьте выпить воды.',
-        time: 'Вчера'
-    }
-];
-
 export function NotificationsModal({ isOpen, onClose }: NotificationsModalProps) {
     const ref = useRef<HTMLDivElement>(null);
+    const { history } = useWorkoutStore();
+    const { habits } = useHabitStore();
+
+    // Generate dynamic notifications
+    const notifications = useMemo<Notification[]>(() => {
+        const notifs: Notification[] = [];
+        const now = new Date();
+
+        // 1. Welcome / Intro
+        if (history.length === 0) {
+            notifs.push({
+                id: 'welcome_1',
+                type: 'info',
+                title: 'Добро пожаловать в RuTren!',
+                message: 'Начни с выбора готовой программы тренировок или создай свою на вкладке упражнений.',
+                time: 'Только что'
+            });
+        }
+
+        // 2. Training achievements
+        if (history.length > 0) {
+            const lastWorkout = history[history.length - 1];
+            const workoutDate = new Date(lastWorkout.date);
+            const daysAgo = Math.floor((now.getTime() - workoutDate.getTime()) / (1000 * 3600 * 24));
+            
+            if (daysAgo === 0) {
+                notifs.push({
+                    id: 'workout_last',
+                    type: 'success',
+                    title: 'Тренировка завершена!',
+                    message: `Отличная работа! Тренировка "${lastWorkout.title}" успешно пройдена.`,
+                    time: 'Сегодня'
+                });
+            } else if (daysAgo > 3) {
+                notifs.push({
+                    id: 'workout_warn',
+                    type: 'warning',
+                    title: 'Время размяться',
+                    message: `Ого, ты не тренировался уже ${daysAgo} дн. Пора возвращаться в ритм!`,
+                    time: 'Недавно'
+                });
+            }
+        }
+
+        if (history.length >= 10 && history.length < 15) {
+            notifs.push({
+                id: 'workout_ach',
+                type: 'success',
+                title: 'Новое достижение 🏆',
+                message: 'Ты преодолел рубеж в 10 тренировок!',
+                time: 'На этой неделе'
+            });
+        }
+
+        // 3. Habits reminder
+        const totalHabits = habits.length;
+        if (totalHabits > 0) {
+            const habitsCompletedToday = habits.filter(h => h.completedDates?.includes(now.toISOString().split('T')[0])).length;
+            if (habitsCompletedToday < totalHabits) {
+                notifs.push({
+                    id: 'habit_remind',
+                    type: 'info',
+                    title: 'Привычки ждут',
+                    message: `У тебя ${totalHabits - habitsCompletedToday} невыполненных привычек на сегодня.`,
+                    time: 'Сегодня'
+                });
+            }
+        }
+
+        return notifs;
+    }, [history, habits]);
+
 
     // Close on click outside
     useEffect(() => {
@@ -102,8 +151,8 @@ export function NotificationsModal({ isOpen, onClose }: NotificationsModalProps)
                     </header>
 
                     <div className={styles.list}>
-                        {NOTIFICATIONS.length > 0 ? (
-                            NOTIFICATIONS.map(item => (
+                        {notifications.length > 0 ? (
+                            notifications.map(item => (
                                 <div key={item.id} className={styles.notificationItem}>
                                     <div className={cn(styles.iconWrapper, getIconStyle(item.type))}>
                                         {getIcon(item.type)}

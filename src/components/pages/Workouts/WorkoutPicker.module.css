@@ -14,7 +14,7 @@
 
 .sheet {
     background: #1c1c1e;
-    border-radius: 24px 24px 0 0;
+    border-radius: 20px 20px 0 0;
     height: 85vh;
     /* Fixed height to match Exercises */
     width: 100%;
@@ -28,16 +28,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 16px;
+    padding-bottom: 14px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .dragHandle {
-    width: 40px;
-    height: 4px;
+    width: 34px;
+    height: 3px;
     background: rgba(255, 255, 255, 0.2);
     border-radius: 2px;
-    margin: 8px 0;
+    margin: 7px 0;
 }
 
 .headerRow {
@@ -45,7 +45,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 17px;
     box-sizing: border-box;
 }
 
@@ -53,7 +53,7 @@
     background: none;
     border: none;
     color: rgba(255, 255, 255, 0.5);
-    padding: 4px;
+    padding: 3px;
     cursor: pointer;
 }
 
@@ -62,24 +62,24 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    padding: 20px;
-    padding-bottom: 40px;
+    padding: 17px;
+    padding-bottom: 34px;
     /* Safe area */
 }
 
 .list {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .card {
     display: flex;
     align-items: center;
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
-    padding: 16px;
+    border-radius: 14px;
+    padding: 14px;
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -89,13 +89,13 @@
 }
 
 .icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 41px;
+    height: 41px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 16px;
+    margin-right: 14px;
     flex-shrink: 0;
 }
 
@@ -129,7 +129,7 @@
 
 .empty {
     text-align: center;
-    padding: 20px;
+    padding: 17px;
     opacity: 0.5;
 }
 

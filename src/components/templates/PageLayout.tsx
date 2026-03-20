@@ -60,12 +60,25 @@ export function PageLayout({ children }: { children?: React.ReactNode }) {
 
     const { title, subtitle } = getHeaderTitle();
 
-    const AvatarVideo = () => (
-        <img
-            src={tgUser?.photo_url || "https://github.com/shadcn.png"}
-            alt="Avatar"
-            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-        />
+    const avatarNode = (
+        <div style={{
+            width: '100%', 
+            height: '100%', 
+            borderRadius: '50%', 
+            background: 'linear-gradient(135deg, rgba(157, 255, 0, 0.2), rgba(157, 255, 0, 0.05))',
+            boxShadow: '0 0 8px rgba(157, 255, 0, 0.25)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: '#9DFF00',
+            border: '1px solid rgba(157, 255, 0, 0.2)'
+        }}>
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '70%', height: '70%' }}>
+                <text x="50%" y="54%" dominantBaseline="middle" textAnchor="middle" fill="currentColor" fontSize="13" fontWeight="800" fontFamily="Montserrat, sans-serif" letterSpacing="-0.5">
+                    RT
+                </text>
+            </svg>
+        </div>
     );
 
 
@@ -76,7 +89,7 @@ export function PageLayout({ children }: { children?: React.ReactNode }) {
                     title={title}
                     subtitle={subtitle}
                     centered
-                    avatar={location.pathname === '/dashboard' ? <AvatarVideo /> : undefined}
+                    avatar={location.pathname === '/dashboard' ? avatarNode : undefined}
                     action={
                         <Button
                             variant="ghost"

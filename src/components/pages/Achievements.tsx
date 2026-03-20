@@ -3,6 +3,7 @@ import { Header } from '../organisms/Header';
 import { Caption, Text, SectionTitle } from '../atoms/Typography';
 import { Lock } from 'lucide-react';
 import { cn } from '@/utils/cn';
+import { SEO } from '../SEO';
 import styles from './Achievements.module.css';
 
 // Store & Data
@@ -23,6 +24,7 @@ export function Achievements() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Достижения" />
             <Header
                 title="Достижения"
                 showBack

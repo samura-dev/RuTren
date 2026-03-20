@@ -1,8 +1,8 @@
 /* Switch */
 .switch {
-    width: 52px;
-    height: 32px;
-    border-radius: 999px;
+    width: 44px;
+    height: 27px;
+    border-radius: 849px;
     padding: 2px;
     position: relative;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -30,8 +30,8 @@
 }
 
 .switchThumb {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     background: white;
     border-radius: 50%;
     box-shadow:
@@ -63,9 +63,9 @@
 
 /* Checkbox */
 .checkbox {
-    width: 24px;
-    height: 24px;
-    border-radius: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 7px;
     border: 1.5px solid var(--text-secondary);
     display: flex;
     align-items: center;

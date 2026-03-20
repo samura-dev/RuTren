@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .title {
@@ -10,8 +10,8 @@
 }
 
 .action {
-    font-size: 13px;
-    height: 32px;
-    padding: 0 12px;
+    font-size: 11px;
+    height: 27px;
+    padding: 0 10px;
     color: var(--color-accent);
 }

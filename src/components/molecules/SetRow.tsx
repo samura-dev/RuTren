@@ -18,7 +18,7 @@ type SetRowProps = {
 export function SetRow({ setNumber, weight, reps, isCompleted, onDelete, onUpdate, showCheckbox = true }: SetRowProps) {
     const controls = useAnimation();
 
-    const handleDragEnd = async (_: any, info: PanInfo) => {
+    const handleDragEnd = async (_: unknown, info: PanInfo) => {
         if (info.offset.x < -80 && onDelete) {
             await controls.start({ x: -100, opacity: 0 });
             onDelete();

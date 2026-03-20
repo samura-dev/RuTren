@@ -16,6 +16,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                         ref={ref}
                         type={type}
                         className={cn(styles.input, styles.hasLeftIcon, className)}
+                        aria-label={props['aria-label'] || props.placeholder || props.name || 'Text input'}
                         {...props}
                     />
                 </div>
@@ -27,6 +28,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
                 ref={ref}
                 type={type}
                 className={cn(styles.input, className)}
+                aria-label={props['aria-label'] || props.placeholder || props.name || 'Text input'}
                 {...props}
             />
         );

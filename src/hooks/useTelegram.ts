@@ -64,8 +64,9 @@ interface TelegramWebApp {
 
 // Safely access the Telegram object
 const getTelegramWebApp = (): TelegramWebApp | undefined => {
-    if (typeof window !== 'undefined' && (window as any).Telegram && (window as any).Telegram.WebApp) {
-        return (window as any).Telegram.WebApp as TelegramWebApp;
+    const w = window as unknown as { Telegram?: { WebApp?: TelegramWebApp } };
+    if (typeof window !== 'undefined' && w.Telegram && w.Telegram.WebApp) {
+        return w.Telegram.WebApp;
     }
     return undefined;
 };
@@ -76,11 +77,12 @@ export function useTelegram() {
 
     useEffect(() => {
         // Direct access to ensure execution
-        if (typeof window !== 'undefined' && window.Telegram && window.Telegram.WebApp) {
-            const webApp = window.Telegram.WebApp;
+        const w = window as unknown as { Telegram?: { WebApp?: TelegramWebApp } };
+        if (typeof window !== 'undefined' && w.Telegram && w.Telegram.WebApp) {
+            const webApp = w.Telegram.WebApp;
             webApp.ready();
             webApp.expand();
-            setIsReady(true);
+            setTimeout(() => setIsReady(true), 0);
         }
     }, []);
 

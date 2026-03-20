@@ -1,41 +1,68 @@
 import { create } from 'zustand';
-import { signInAnonymously, signOut, onAuthStateChanged, type User } from 'firebase/auth';
-import { auth } from '@/config/firebase';
+import pb from '@/lib/pocketbase';
+import type { AuthModel } from 'pocketbase';
 
 interface AuthState {
-    user: User | null;
+    user: AuthModel | null;
     loading: boolean;
-    signIn: () => Promise<void>;
-    logout: () => Promise<void>;
+    autoLogin: () => Promise<void>;
+    logout: () => void;
     initialize: () => () => void; // returns unsubscribe function
 }
 
 export const useAuthStore = create<AuthState>((set) => ({
-    user: null,
+    user: pb.authStore.record,
     loading: true,
 
-    signIn: async () => {
+    autoLogin: async () => {
         try {
-            await signInAnonymously(auth);
+            set({ loading: true });
+            if (pb.authStore.isValid) {
+                set({ user: pb.authStore.record, loading: false });
+                return;
+            }
+            
+            try {
+                // Try to login with dev user
+                await pb.collection('users').authWithPassword('dev@rutren.com', 'Rutren123!');
+            } catch (e) {
+                // If fails, create the user
+                await pb.collection('users').create({
+                    username: 'dev_user',
+                    email: 'dev@rutren.com',
+                    password: 'Rutren123!',
+                    passwordConfirm: 'Rutren123!',
+                    name: 'Developer'
+                });
+                await pb.collection('users').authWithPassword('dev@rutren.com', 'Rutren123!');
+            }
+            set({ user: pb.authStore.record });
         } catch (error) {
-            console.error('Auth error:', error);
+            console.error('PocketBase AutoAuth error:', error);
+        } finally {
+            set({ loading: false });
         }
     },
 
-    logout: async () => {
+    logout: () => {
         try {
-            await signOut(auth);
+            pb.authStore.clear();
             set({ user: null });
         } catch (error) {
-            console.error('Logout error:', error);
+            console.error('PocketBase Logout error:', error);
         }
     },
 
     initialize: () => {
-        const unsubscribe = onAuthStateChanged(auth, (user) => {
-            console.log('Auth state changed:', user ? `User ${user.uid}` : 'No user');
-            set({ user, loading: false });
+        set({ user: pb.authStore.record, loading: false });
+
+        // Подписываемся на изменения авторизации в PocketBase
+        const unsubscribe = pb.authStore.onChange((token, model) => {
+            console.log('PocketBase auth state changed!', model ? `User ${model.id}` : 'No user');
+            set({ user: model });
         });
-        return unsubscribe;
+
+        // Возвращаем функцию отписки
+        return () => unsubscribe();
     },
 }));

@@ -1,6 +1,6 @@
 .page {
     min-height: 100vh;
-    padding: 24px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -8,10 +8,10 @@
 }
 
 .progressContainer {
-    height: 4px;
+    height: 3px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 2px;
-    margin-bottom: 40px;
+    margin-bottom: 34px;
     overflow: hidden;
 }
 
@@ -48,20 +48,20 @@
 }
 
 .title {
-    font-size: 24px !important;
-    margin-bottom: 8px !important;
+    font-size: 20px !important;
+    margin-bottom: 7px !important;
 }
 
 .subtitle {
     color: var(--text-secondary);
-    margin-bottom: 40px;
+    margin-bottom: 34px;
 }
 
 /* Step 1: Gender */
 .genderGrid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 16px;
+    gap: 14px;
     width: 100%;
 }
 
@@ -70,8 +70,8 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    padding: 30px !important;
+    gap: 10px;
+    padding: 26px !important;
     cursor: pointer;
     transition: all 0.2s;
     border: 1px solid transparent !important;
@@ -83,7 +83,7 @@
 }
 
 .genderIcon {
-    font-size: 40px;
+    font-size: 34px;
 }
 
 .genderLabel {
@@ -95,20 +95,20 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 14px;
 }
 
 .inputCard {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 16px !important;
+    gap: 14px;
+    padding: 14px !important;
 }
 
 .inputIcon {
-    width: 48px;
-    height: 48px;
-    border-radius: 12px;
+    width: 41px;
+    height: 41px;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.05);
     display: flex;
     align-items: center;
@@ -124,7 +124,7 @@
 }
 
 .inputWrapper label {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--text-secondary);
 }
 
@@ -133,10 +133,10 @@
     background: transparent;
     border: none;
     color: var(--text-primary);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     outline: none;
-    padding: 4px 0 0;
+    padding: 3px 0 0;
 }
 
 /* Step 3: Goal */
@@ -144,11 +144,11 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
 .goalCard {
-    padding: 20px !important;
+    padding: 17px !important;
     cursor: pointer;
     border: 1px solid transparent !important;
     transition: all 0.2s;
@@ -167,21 +167,21 @@
 
 .goalText {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .checkCircle {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     border-radius: 50%;
     background: var(--color-accent);
     box-shadow: 0 0 10px var(--color-accent);
 }
 
 .nextBtn {
-    margin-top: 40px;
+    margin-top: 34px;
     width: 100%;
-    height: 56px !important;
-    font-size: 16px !important;
-    border-radius: 20px !important;
+    height: 48px !important;
+    font-size: 14px !important;
+    border-radius: 17px !important;
 }

@@ -1,0 +1,111 @@
+[
+  {
+    "id": "collection_profiles",
+    "name": "profiles",
+    "type": "base",
+    "system": false,
+    "schema": [
+      { "id": "pr_name", "name": "name", "type": "text" },
+      { "id": "pr_age", "name": "age", "type": "number" },
+      { "id": "pr_weight", "name": "weight", "type": "number" },
+      { "id": "pr_height", "name": "height", "type": "number" },
+      { "id": "pr_gender", "name": "gender", "type": "text" },
+      { "id": "pr_goal", "name": "goal", "type": "text" },
+      { "id": "pr_experience", "name": "experience", "type": "text" },
+      { "id": "pr_avatar", "name": "avatar", "type": "text" },
+      { "id": "pr_darkTheme", "name": "darkTheme", "type": "bool" },
+      { "id": "pr_notifications", "name": "notifications", "type": "bool" },
+      { "id": "pr_language", "name": "language", "type": "text" },
+      { "id": "pr_units", "name": "units", "type": "text" },
+      { "id": "pr_isOnboarded", "name": "isOnboarded", "type": "bool" },
+      { "id": "pr_level", "name": "level", "type": "number" },
+      { "id": "pr_xp", "name": "xp", "type": "number" },
+      { "id": "pr_streakDays", "name": "streakDays", "type": "number" },
+      { "id": "pr_joinedAt", "name": "joinedAt", "type": "text" },
+      { "id": "pr_user", "name": "user", "type": "relation", "required": true, "options": { "collectionId": "_pb_users_auth_", "cascadeDelete": true, "minSelect": null, "maxSelect": 1, "displayFields": [] } }
+    ],
+    "listRule": "@request.auth.id != \"\"",
+    "viewRule": "@request.auth.id != \"\"",
+    "createRule": "@request.auth.id != \"\"",
+    "updateRule": "@request.auth.id != \"\"",
+    "deleteRule": "@request.auth.id != \"\""
+  },
+  {
+    "id": "collection_programs",
+    "name": "programs",
+    "type": "base",
+    "system": false,
+    "schema": [
+      { "id": "p_title", "name": "title", "type": "text" },
+      { "id": "p_subtitle", "name": "subtitle", "type": "text" },
+      { "id": "p_type", "name": "type", "type": "text" },
+      { "id": "p_exercises", "name": "exercises", "type": "json" },
+      { "id": "p_order", "name": "order", "type": "number" },
+      { "id": "p_user", "name": "user", "type": "relation", "required": true, "options": { "collectionId": "_pb_users_auth_", "cascadeDelete": true, "minSelect": null, "maxSelect": 1, "displayFields": [] } }
+    ],
+    "listRule": "@request.auth.id != \"\"",
+    "viewRule": "@request.auth.id != \"\"",
+    "createRule": "@request.auth.id != \"\"",
+    "updateRule": "@request.auth.id != \"\"",
+    "deleteRule": "@request.auth.id != \"\""
+  },
+  {
+    "id": "collection_history",
+    "name": "history",
+    "type": "base",
+    "system": false,
+    "schema": [
+      { "id": "h_programId", "name": "programId", "type": "text" },
+      { "id": "h_title", "name": "title", "type": "text" },
+      { "id": "h_subtitle", "name": "subtitle", "type": "text" },
+      { "id": "h_date", "name": "date", "type": "text" },
+      { "id": "h_duration", "name": "duration", "type": "number" },
+      { "id": "h_calories", "name": "calories", "type": "number" },
+      { "id": "h_totalVolume", "name": "totalVolume", "type": "number" },
+      { "id": "h_exercises", "name": "exercises", "type": "json" },
+      { "id": "h_user", "name": "user", "type": "relation", "required": true, "options": { "collectionId": "_pb_users_auth_", "cascadeDelete": true, "minSelect": null, "maxSelect": 1, "displayFields": [] } }
+    ],
+    "listRule": "@request.auth.id != \"\"",
+    "viewRule": "@request.auth.id != \"\"",
+    "createRule": "@request.auth.id != \"\"",
+    "updateRule": "@request.auth.id != \"\"",
+    "deleteRule": "@request.auth.id != \"\""
+  },
+  {
+    "id": "collection_habits",
+    "name": "habits",
+    "type": "base",
+    "system": false,
+    "schema": [
+      { "id": "hb_title", "name": "title", "type": "text" },
+      { "id": "hb_description", "name": "description", "type": "text" },
+      { "id": "hb_icon", "name": "icon", "type": "text" },
+      { "id": "hb_color", "name": "color", "type": "text" },
+      { "id": "hb_frequency", "name": "frequency", "type": "json" },
+      { "id": "hb_completedDates", "name": "completedDates", "type": "json" },
+      { "id": "hb_order", "name": "order", "type": "number" },
+      { "id": "hb_user", "name": "user", "type": "relation", "required": true, "options": { "collectionId": "_pb_users_auth_", "cascadeDelete": true, "minSelect": null, "maxSelect": 1, "displayFields": [] } }
+    ],
+    "listRule": "@request.auth.id != \"\"",
+    "viewRule": "@request.auth.id != \"\"",
+    "createRule": "@request.auth.id != \"\"",
+    "updateRule": "@request.auth.id != \"\"",
+    "deleteRule": "@request.auth.id != \"\""
+  },
+  {
+    "id": "collection_measurements",
+    "name": "measurements",
+    "type": "base",
+    "system": false,
+    "schema": [
+      { "id": "m_type", "name": "type", "type": "text" },
+      { "id": "m_entries", "name": "entries", "type": "json" },
+      { "id": "m_user", "name": "user", "type": "relation", "required": true, "options": { "collectionId": "_pb_users_auth_", "cascadeDelete": true, "minSelect": null, "maxSelect": 1, "displayFields": [] } }
+    ],
+    "listRule": "@request.auth.id != \"\"",
+    "viewRule": "@request.auth.id != \"\"",
+    "createRule": "@request.auth.id != \"\"",
+    "updateRule": "@request.auth.id != \"\"",
+    "deleteRule": "@request.auth.id != \"\""
+  }
+]

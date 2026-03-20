@@ -17,6 +17,7 @@ export const SearchInput = forwardRef<HTMLInputElement, SearchInputProps>(
                 <Input
                     ref={ref}
                     className={cn(styles.input, className)}
+                    aria-label={props['aria-label'] || props.placeholder || 'Search'}
                     {...props}
                 />
             </div>

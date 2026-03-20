@@ -1,0 +1,96 @@
+.container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.empty {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 13px;
+    font-family: var(--font-main);
+}
+
+.chartArea {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.svg {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.areaPath {
+    stroke: none;
+    opacity: 0.8;
+}
+
+.linePath {
+    stroke: var(--color-accent);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    /* Optional: Animate stroke on load */
+    stroke-dasharray: 2000;
+    stroke-dashoffset: 2000;
+    animation: drawLine 1.5s ease-out forwards;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.dataPoint {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: fadeInPoint 0.5s ease forwards 1s; /* appears after line draws */
+}
+
+@keyframes fadeInPoint {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.pointCircle {
+    fill: var(--color-bg);
+    stroke: var(--color-accent);
+    stroke-width: 3;
+}
+
+.pointText {
+    fill: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.labelsX {
+    display: flex;
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    height: 15px;
+}
+
+.labelX {
+    position: absolute;
+    transform: translateX(-50%);
+    color: var(--text-secondary);
+    font-family: var(--font-main);
+    font-size: 10px;
+}

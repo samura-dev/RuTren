@@ -1,11 +1,11 @@
 .input {
     width: 100%;
-    height: 50px;
-    padding: 0 16px;
+    height: 43px;
+    padding: 0 14px;
     border-radius: var(--radius-input);
     background-color: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    font-size: 14px;
+    font-size: 13px;
     color: var(--text-primary);
     transition: all 0.2s ease;
     font-family: var(--font-main);
@@ -30,7 +30,7 @@
 
 .leftIcon {
     position: absolute;
-    left: 16px;
+    left: 14px;
     top: 50%;
     transform: translateY(-50%);
     color: var(--text-secondary);
@@ -42,5 +42,5 @@
 }
 
 .hasLeftIcon {
-    padding-left: 48px;
+    padding-left: 41px;
 }

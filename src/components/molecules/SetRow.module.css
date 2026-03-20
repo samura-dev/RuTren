@@ -1,9 +1,9 @@
 .container {
     position: relative;
-    height: 64px;
-    margin-bottom: 8px;
+    height: 54px;
+    margin-bottom: 7px;
     /* Gap between rows */
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
     background: transparent;
 }
@@ -18,8 +18,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding-right: 24px;
-    border-radius: 16px;
+    padding-right: 20px;
+    border-radius: 14px;
     z-index: 1;
 }
 
@@ -37,9 +37,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 16px;
+    padding: 0 14px;
     z-index: 2;
-    border-radius: 16px;
+    border-radius: 14px;
     /* Touch action manipulation to allow vertical scroll but handle horizontal swipe */
     touch-action: pan-y;
 }
@@ -52,10 +52,10 @@
 }
 
 .setNumber {
-    width: 36px;
-    height: 36px;
+    width: 31px;
+    height: 31px;
     background: rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
+    border-radius: 9px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,7 +69,7 @@
 }
 
 .setNumberText {
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
     color: inherit;
     font-family: var(--font-main);
@@ -78,7 +78,7 @@
 .inputs {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
     flex: 1;
     justify-content: center;
     /* Ensure inputs are interactive */
@@ -91,7 +91,7 @@
     flex-direction: column;
     align-items: center;
     gap: 0;
-    min-width: 50px;
+    min-width: 43px;
 }
 
 .input {
@@ -102,7 +102,7 @@
     /* Thicker border */
     color: var(--text-primary);
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
     font-family: inherit;
     padding: 2px 0;
@@ -124,21 +124,21 @@
 }
 
 .inputLabel {
-    font-size: 10px;
+    font-size: 9px;
     opacity: 0.5;
     text-transform: lowercase;
-    margin-top: 4px;
+    margin-top: 3px;
     font-weight: 500;
 }
 
 .divider {
     width: 1px;
-    height: 24px;
+    height: 20px;
     background: rgba(255, 255, 255, 0.15);
 }
 
 .checkboxContainer {
-    width: 36px;
+    width: 31px;
     display: flex;
     justify-content: flex-end;
     align-items: center;

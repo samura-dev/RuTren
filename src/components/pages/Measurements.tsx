@@ -7,6 +7,7 @@ import { Scale, TrendingUp, Plus } from 'lucide-react';
 import { cn } from '@/utils/cn';
 import { Modal } from '@/components/molecules/Modal';
 import { FormInput } from '@/components/molecules/FormInput';
+import { SEO } from '../SEO';
 import styles from './Measurements.module.css';
 
 // Store & Types
@@ -50,6 +51,7 @@ export function Measurements() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Замеры" />
             <Header
                 title="Замеры"
                 showBack

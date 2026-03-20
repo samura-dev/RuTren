@@ -5,6 +5,7 @@ import { Button } from '../atoms/Button';
 import { Clock, Dumbbell, Flame, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useWorkoutStore } from '@/stores/useWorkoutStore';
+import { SEO } from '../SEO';
 import styles from './History.module.css';
 
 export function History() {
@@ -43,6 +44,7 @@ export function History() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - История" />
             <Header
                 title="История"
                 showBack

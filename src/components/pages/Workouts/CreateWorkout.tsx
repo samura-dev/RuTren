@@ -6,6 +6,7 @@ import { SectionTitle } from '../../atoms/Typography';
 import { Plus } from 'lucide-react';
 import { EditableExerciseCard } from './EditableExerciseCard';
 import { ExerciseSelector } from './ExerciseSelector';
+import { SEO } from '../../SEO';
 import styles from './CreateWorkout.module.css';
 import { Reorder } from 'framer-motion';
 
@@ -54,6 +55,7 @@ export function CreateWorkout() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Новая программа" />
             <Header
                 title="Новая программа"
                 centered

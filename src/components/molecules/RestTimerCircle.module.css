@@ -3,8 +3,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    width: 120px;
-    height: 120px;
+    width: 102px;
+    height: 102px;
 }
 
 .timerWrapper {
@@ -48,13 +48,13 @@
 }
 
 .time {
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1;
 }
 
 .label {
-    font-size: 10px;
+    font-size: 9px;
     text-transform: uppercase;
     opacity: 0.7;
 }

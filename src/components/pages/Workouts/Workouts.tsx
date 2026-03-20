@@ -8,6 +8,7 @@ import { WeeklyCalendarWidget } from '../../organisms/WeeklyCalendarWidget';
 import { FullCalendarModal } from '../../organisms/FullCalendarModal';
 import { Reorder, AnimatePresence, useDragControls, useAnimation, motion, type PanInfo } from 'framer-motion';
 import { cn } from '@/utils/cn';
+import { SEO } from '../../SEO';
 import styles from './Workouts.module.css';
 
 // Store & Types
@@ -25,7 +26,7 @@ function WorkoutItem({ workout, isEditMode, onDelete, onClick }: WorkoutItemProp
     const dragControls = useDragControls();
     const controls = useAnimation();
 
-    const handleDragEnd = async (_: any, info: PanInfo) => {
+    const handleDragEnd = async (_: unknown, info: PanInfo) => {
         if (info.offset.x < -100) {
             await controls.start({ x: -1000, transition: { duration: 0.2 } });
             onDelete(workout.id);
@@ -130,6 +131,7 @@ export function Workouts() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Программы тренировок" />
             <Header
                 title="Тренировки"
                 centered
@@ -218,19 +220,6 @@ export function Workouts() {
                             Создать тренировку
                         </Button>
                     )}
-                </section>
-
-                {/* Quick Start / Suggestions */}
-                <section className={styles.section}>
-                    <div className={styles.suggestionCard}>
-                        <div className={styles.suggestionInfo}>
-                            <Text className={styles.suggestionTitle}>Начать пустую</Text>
-                            <Caption className={styles.suggestionCaption}>Тренировка без шаблона</Caption>
-                        </div>
-                        <Button className={styles.startBtn}>
-                            Погнали
-                        </Button>
-                    </div>
                 </section>
             </div>
 

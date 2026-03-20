@@ -5,6 +5,7 @@ import { Text, PageTitle } from '../atoms/Typography';
 import { GlassCard } from '../atoms/GlassCard';
 import { ChevronRight, Ruler, Weight } from 'lucide-react';
 import { cn } from '@/utils/cn';
+import { SEO } from '../SEO';
 import styles from './Onboarding.module.css';
 import { useUserStore } from '@/stores/useUserStore';
 import type { UserProfile } from '@/types';
@@ -44,6 +45,7 @@ export function Onboarding() {
 
     return (
         <div className={styles.page}>
+            <SEO title="RuTren - Добро пожаловать" />
             {/* Progress Bar */}
             <div className={styles.progressContainer}>
                 <div
